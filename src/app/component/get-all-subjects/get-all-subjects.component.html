@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class="table-responsive">
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="bg-primary text-white">ID</th>
+        <th scope="col" class="bg-primary text-white">Subject</th>
+       
+        <th scope="col" class="bg-primary text-white">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let sub of subject">
+      <tr>
+        
+        <td>{{sub.id}}</td>
+        <td>{{sub.name}}</td>
+        
+        <td class="d-flex justify-content-between">
+          <a [routerLink]="['/edit-subject',sub.id]"class ="btn btn-primary flex-fill  ms-5 me-3" >Edit</a>
+          <a  class="btn btn-danger flex-fill  ms-3 me-3" (click)="deleteSubject(sub.id)">Delete</a>
+
+
+        </td>      
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
